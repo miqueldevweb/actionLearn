@@ -1,0 +1,24 @@
+name: TestThisAction
+on: 
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with: 
+          python-version: '3.11'
+      - name: Run script
+        run: python ./test.py
+      - name: Commit and push changes
+        uses: stefanweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update GIT
+          commit_user_name: Miquel Pascual [Action]
+          commit_user_email: miqueldevweb@gmail.com
