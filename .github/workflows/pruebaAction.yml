@@ -17,7 +17,7 @@ jobs:
       - name: Run script
         run: python ./test.py
       - name: Commit and push changes
-        uses: stefanweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update GIT
           commit_user_name: Miquel Pascual [Action]
